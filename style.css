@@ -1,0 +1,434 @@
+/* ==========================================================================
+   STYLE.CSS — macOS Sequoia / Sonoma Design System & Tokens
+   Production-grade, zero layout-shift, WCAG AA Contrast compliant
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. Color Palette & Accents (Dark Theme Default: Graphite-Navy)
+     ------------------------------------------------------------------------ */
+  --base-bg: #0B0D14;
+  --bg-desktop: #0B0D14;
+  --bg-window: rgba(20, 22, 32, 0.60);
+  --bg-window-solid: #12141f;
+  --bg-titlebar: rgba(22, 24, 36, 0.80);
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.075);
+  --bg-input: rgba(0, 0, 0, 0.40);
+
+  --glass-dock-bg: rgba(14, 14, 22, 0.68);
+  --glass-dock-border: rgba(255, 255, 255, 0.12);
+  --glass-tab-bg: rgba(255, 255, 255, 0.05);
+  --glass-tab-active: rgba(255, 255, 255, 0.14);
+
+  /* Primary Accent: macOS Blue */
+  --accent-primary: #0a84ff;
+  --accent-primary-hover: #0071e3;
+  --accent-primary-subtle: rgba(10, 132, 255, 0.15);
+
+  /* Neutral Highlight (2nd Accent) */
+  --accent-neutral: rgba(255, 255, 255, 0.14);
+  --accent-neutral-subtle: rgba(255, 255, 255, 0.06);
+
+  /* High-Contrast WCAG AA Text Tokens */
+  --text-primary: #f5f5f7;
+  --text-secondary: #d1d1d6;
+  --text-muted: #8e8e93;
+
+  /* Borders & Highlights */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-active: rgba(10, 132, 255, 0.65);
+  --window-top-specular: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+  --window-inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+
+  /* Ambient Drift Orbs — indigo/blue/teal palette */
+  --orb-1-color: rgba(29, 78, 216, 0.18);
+  --orb-2-color: rgba(91, 33, 182, 0.14);
+  --orb-3-color: rgba(14, 165, 233, 0.12);
+  --vignette-color: radial-gradient(ellipse at center, transparent 40%, rgba(11, 13, 20, 0.75) 100%);
+  --noise-opacity: 0.03;
+
+  /* Layered Soft Shadows */
+  --shadow-window: 0 30px 80px -15px rgba(0, 0, 0, 0.75), 0 12px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  --shadow-dock: 0 20px 48px -8px rgba(0, 0, 0, 0.65), 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+
+  /* ------------------------------------------------------------------------
+     Safe Area & Viewport Tokens (Dock Overlap Elimination)
+     ------------------------------------------------------------------------ */
+  --tabbar-h: 44px;
+  --dock-h: 58px;
+  --dock-gap: 12px;
+  --dock-bottom: max(8px, env(safe-area-inset-bottom, 0px));
+  --window-stage-h: calc(100dvh - var(--tabbar-h) - var(--dock-h) - var(--dock-gap) - var(--dock-bottom));
+
+  /* ------------------------------------------------------------------------
+     2. Spacing Scale (4/8 px Base)
+     ------------------------------------------------------------------------ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ------------------------------------------------------------------------
+     3. Corner Radii (12 / 16 / 24)
+     ------------------------------------------------------------------------ */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* ------------------------------------------------------------------------
+     4. Type Scale via clamp() Tokens
+     ------------------------------------------------------------------------ */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
+
+  /* Display */
+  --font-size-display: clamp(2rem, 3.5vw + 1rem, 3.25rem);
+  --line-height-display: 1.1;
+  --letter-spacing-display: -0.035em;
+  --font-weight-display: 700;
+
+  /* H1 */
+  --font-size-h1: clamp(1.5rem, 2.2vw + 0.8rem, 2.25rem);
+  --line-height-h1: 1.2;
+  --letter-spacing-h1: -0.025em;
+  --font-weight-h1: 700;
+
+  /* H2 */
+  --font-size-h2: clamp(1.2rem, 1.4vw + 0.7rem, 1.6rem);
+  --line-height-h2: 1.3;
+  --letter-spacing-h2: -0.02em;
+  --font-weight-h2: 600;
+
+  /* Body */
+  --font-size-body: clamp(0.875rem, 0.35vw + 0.8rem, 0.95rem);
+  --line-height-body: 1.55;
+  --letter-spacing-body: -0.01em;
+  --font-weight-body: 400;
+
+  /* Caption */
+  --font-size-caption: clamp(0.72rem, 0.25vw + 0.68rem, 0.8rem);
+  --line-height-caption: 1.4;
+  --letter-spacing-caption: 0.01em;
+  --font-weight-caption: 500;
+
+  /* Mono */
+  --font-size-mono: clamp(0.8rem, 0.3vw + 0.75rem, 0.875rem);
+  --line-height-mono: 1.5;
+  --letter-spacing-mono: 0;
+  --font-weight-mono: 400;
+
+  /* Glass Surface */
+  --backdrop-blur: blur(24px) saturate(160%);
+  -webkit-backdrop-blur: blur(24px) saturate(160%);
+
+  /* Animation Easing Tokens */
+  --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.12);
+  --duration-fast: 250ms;
+  --duration-normal: 350ms;
+  --duration-slow: 450ms;
+}
+
+/* --------------------------------------------------------------------------
+   Light Theme Tokens (Frosted White Glass, Tokenized, AA Contrast)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] {
+  --base-bg: #eef2f7;
+  --bg-desktop: #eef2f7;
+  --bg-window: rgba(255, 255, 255, 0.68);
+  --bg-window-solid: #fcfdfe;
+  --bg-titlebar: rgba(245, 247, 250, 0.82);
+  --bg-card: rgba(0, 0, 0, 0.035);
+  --bg-card-hover: rgba(0, 0, 0, 0.065);
+  --bg-input: rgba(255, 255, 255, 0.85);
+
+  --glass-dock-bg: rgba(255, 255, 255, 0.72);
+  --glass-dock-border: rgba(0, 0, 0, 0.12);
+  --glass-tab-bg: rgba(0, 0, 0, 0.04);
+  --glass-tab-active: rgba(255, 255, 255, 0.95);
+
+  --accent-primary: #0071e3;
+  --accent-primary-hover: #0077ed;
+  --accent-primary-subtle: rgba(0, 113, 227, 0.12);
+
+  --accent-neutral: rgba(0, 0, 0, 0.08);
+  --accent-neutral-subtle: rgba(0, 0, 0, 0.04);
+
+  --text-primary: #1d1d1f;
+  --text-secondary: #424245;
+  --text-muted: #6e6e73;
+
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.13);
+  --border-active: rgba(0, 113, 227, 0.55);
+  --window-top-specular: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  --window-inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
+
+  --orb-1-color: rgba(0, 113, 227, 0.11);
+  --orb-2-color: rgba(120, 70, 210, 0.08);
+  --orb-3-color: rgba(45, 150, 230, 0.09);
+  --vignette-color: radial-gradient(circle at center, transparent 45%, rgba(210, 218, 230, 0.45) 100%);
+  --noise-opacity: 0.025;
+
+  --shadow-window: 0 24px 60px -15px rgba(0, 0, 0, 0.14), 0 8px 20px -8px rgba(0, 0, 0, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
+  --shadow-dock: 0 18px 42px -6px rgba(0, 0, 0, 0.14), 0 3px 10px rgba(0, 0, 0, 0.06), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+  --shadow-card: 0 4px 16px -2px rgba(0, 0, 0, 0.06);
+
+  --backdrop-blur: blur(24px) saturate(160%);
+  -webkit-backdrop-blur: blur(24px) saturate(160%);
+}
+
+/* --------------------------------------------------------------------------
+   Global Reset & Strict SPA Viewport Architecture (No Page Scroll)
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+}
+
+html, body {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden; /* STRICT: No page scroll */
+  background-color: var(--base-bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  scrollbar-width: none;
+}
+
+.macos-desktop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--base-bg);
+}
+
+/* --------------------------------------------------------------------------
+   Layered Black Glass / Ambient Drift Background (Transform-only, 30-60s)
+   -------------------------------------------------------------------------- */
+.ambient-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  /* Use inline background radial-gradient per orb instead of CSS filter:blur
+     which causes massive paint invalidation on large elements. */
+  pointer-events: none;
+  /* will-change only while animating (set per keyframe via JS if needed) */
+}
+
+@keyframes orbDrift1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(60px, 40px, 0) scale(1.08); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes orbDrift2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-55px, -35px, 0) scale(0.94); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes orbDrift3 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(40px, -50px, 0) scale(1.06); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+.orb-1 {
+  width: 750px;
+  height: 750px;
+  top: -180px;
+  left: 8%;
+  background: radial-gradient(circle, var(--orb-1-color) 0%, transparent 70%);
+  animation: orbDrift1 48s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb-2 {
+  width: 680px;
+  height: 680px;
+  bottom: 0;
+  right: 8%;
+  background: radial-gradient(circle, var(--orb-2-color) 0%, transparent 70%);
+  animation: orbDrift2 58s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb-3 {
+  width: 580px;
+  height: 580px;
+  top: 35%;
+  left: 45%;
+  background: radial-gradient(circle, var(--orb-3-color) 0%, transparent 70%);
+  animation: orbDrift3 52s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Pause background drift when document is hidden or reduced motion */
+.ambient-background.is-paused .ambient-orb {
+  animation-play-state: paused;
+}
+
+/* Inline SVG Noise Texture Overlay */
+.ambient-noise {
+  position: absolute;
+  inset: 0;
+  opacity: var(--noise-opacity);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Vignette */
+.ambient-vignette {
+  position: absolute;
+  inset: 0;
+  background: var(--vignette-color);
+  pointer-events: none;
+}
+
+/* Fallback for browsers with no backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  .macos-window {
+    background: var(--bg-window-solid) !important;
+  }
+  .macos-browser-bar {
+    background: var(--bg-window-solid) !important;
+  }
+  .dock-glass-capsule {
+    background: var(--bg-window-solid) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Typography Utility Classes & Tabular Numbers
+   -------------------------------------------------------------------------- */
+.type-display {
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-display);
+  font-weight: var(--font-weight-display);
+}
+
+.type-h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--letter-spacing-h1);
+  font-weight: var(--font-weight-h1);
+}
+
+.type-h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  letter-spacing: var(--letter-spacing-h2);
+  font-weight: var(--font-weight-h2);
+}
+
+.type-body {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  font-weight: var(--font-weight-body);
+}
+
+.type-caption {
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  font-weight: var(--font-weight-caption);
+}
+
+.type-mono {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  line-height: var(--line-height-mono);
+  letter-spacing: var(--letter-spacing-mono);
+  font-weight: var(--font-weight-mono);
+}
+
+/* Tabular numbers for statistics and countdowns */
+.tabular-nums,
+.stat-num,
+.lc-stat-value,
+.stat-value,
+.system-clock {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Focus Management & Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+button, a, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Custom Internal Window Scrollbar (Thin macOS Style)
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

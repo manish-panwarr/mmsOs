@@ -1,0 +1,20 @@
+{
+  "name": "manish-portfolio-macos-spa",
+  "version": "2.0.0",
+  "description": "Production-grade macOS-style window-based SPA portfolio for Manish Mohan Singh",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/validate.js",
+    "lint": "node scripts/validate.js --lint",
+    "validate": "node scripts/validate.js"
+  },
+  "keywords": [
+    "portfolio",
+    "macos",
+    "spa",
+    "vanilla-js",
+    "es-modules"
+  ],
+  "author": "Manish Mohan Singh",
+  "license": "MIT"
+}

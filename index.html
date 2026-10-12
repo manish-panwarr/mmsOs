@@ -1,0 +1,1930 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manish Mohan Singh — Full Stack Engineer | macOS Web SPA</title>
+  <meta name="description"
+    content="Production-grade macOS window-based portfolio for Manish Mohan Singh. Full Stack Engineer specializing in React, Node.js, MERN, and AI integrations." />
+  <meta name="theme-color" content="#0a0a12" />
+  <link rel="canonical" href="https://mms.dev/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Manish Mohan Singh — Full Stack Engineer | macOS Web SPA" />
+  <meta property="og:description"
+    content="Explore full stack engineering projects, technical arsenal, verified credentials, and resume in a macOS window-based SPA." />
+  <meta property="og:url" content="https://mms.dev/" />
+  <meta property="og:image" content="images/profilepic.jpeg" />
+  <meta property="og:site_name" content="mms.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Manish Mohan Singh — Full Stack Engineer" />
+  <meta name="twitter:description"
+    content="Building performant MERN and AI-enabled web experiences. View projects, certifications, and contact for collaboration." />
+  <meta name="twitter:image" content="images/profilepic.jpeg" />
+
+  <!-- Schema.org Person LD+JSON -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Manish Mohan Singh",
+      "url": "https://mms.dev/",
+      "sameAs": [
+        "https://www.linkedin.com/in/manish-mohan-singh-aab371374/",
+        "https://github.com/manish-panwarr",
+        "https://leetcode.com/u/g7pE7qxNks/"
+      ],
+      "jobTitle": "Full Stack Engineer",
+      "description": "Building performant MERN and AI-enabled web applications.",
+      "knowsAbout": ["JavaScript", "React", "Node.js", "MongoDB", "Python", "AI", "DevOps", "Docker"]
+    }
+  </script>
+
+  <!-- Pre-paint Theme Script (Zero-FOUC) -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('macos_theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="macos-enhancements.css" />
+
+  <!-- GSAP CDN for optional accelerated physics -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+</head>
+
+<body class="macos-desktop">
+  <!-- Layered Black Glass / Ambient Drift Background (30-60s GPU Drift, Noise, Vignette) -->
+  <div class="ambient-background" id="ambient-background" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-noise"></div>
+    <div class="ambient-vignette"></div>
+  </div>
+
+  <!-- SF Symbols Style Inline SVG Sprite (1.5px stroke, rounded caps, 24px grid) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" id="sf-symbols-sprite">
+    <!-- 1. Home (house) -->
+    <symbol id="icon-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H4a1 1 0 0 1-1-1v-9.5z" />
+    </symbol>
+    <!-- 2. Resume (doc.text) -->
+    <symbol id="icon-doc-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+      <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z" />
+      <line x1="9" y1="12" x2="15" y2="12" />
+      <line x1="9" y1="16" x2="13" y2="16" />
+    </symbol>
+    <!-- 3. Services (briefcase / wrench.and.screwdriver) -->
+    <symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="7" width="18" height="13" rx="2" />
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <path d="M3 12h18" />
+      <circle cx="12" cy="12" r="1" fill="currentColor" />
+    </symbol>
+    <!-- 4. Projects (folder / square.stack.3d) -->
+    <symbol id="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 7l8-4 8 4-8 4-8-4z" />
+      <path d="M4 12l8 4 8-4" />
+      <path d="M4 17l8 4 8-4" />
+    </symbol>
+    <!-- 5. Certificates (rosette / checkmark.seal) -->
+    <symbol id="icon-rosette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path
+        d="M12 2l2.3 2.3 3.3-.6 1 3.2 3.1 1.4-.7 3.3 2.1 2.6-2.1 2.6.7 3.3-3.1 1.4-1 3.2-3.3-.6L12 22l-2.3-2.3-3.3.6-1-3.2-3.1-1.4.7-3.3-2.1-2.6 2.1-2.6-.7-3.3 3.1-1.4 1-3.2 3.3.6L12 2z" />
+      <path d="M9 12l2 2 4-4" />
+    </symbol>
+    <!-- 6. Education (graduationcap) -->
+    <symbol id="icon-graduationcap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+      <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5" />
+    </symbol>
+    <!-- 7. Skills (cpu / bolt) -->
+    <symbol id="icon-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="2" />
+      <rect x="9" y="9" width="6" height="6" rx="1" />
+      <path d="M9 2v3m6-3v3m-6 14v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3" />
+    </symbol>
+    <!-- 8. Contact (envelope) -->
+    <symbol id="icon-envelope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" />
+    </symbol>
+    <!-- 9. Terminal (terminal-prompt: >_) -->
+    <symbol id="icon-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="16" rx="2.5" />
+      <path d="M7 9l4 3-4 3" />
+      <line x1="13" y1="15" x2="17" y2="15" />
+    </symbol>
+    <!-- Social & Navigation Icons -->
+    <symbol id="icon-github" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+    </symbol>
+    <symbol id="icon-apple" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.65 1.35-.58.67-1.09 1.74-.95 2.77 1 .08 2.05-.52 2.67-1.27z" />
+    </symbol>
+    <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 18l-6-6 6-6" />
+    </symbol>
+    <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18l6-6-6-6" />
+    </symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1.5" />
+      <rect x="14" y="3" width="7" height="7" rx="1.5" />
+      <rect x="14" y="14" width="7" height="7" rx="1.5" />
+      <rect x="3" y="14" width="7" height="7" rx="1.5" />
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+    </symbol>
+    <!-- Globe / Website Preview icon -->
+    <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </symbol>
+  </svg>
+
+  <!-- Static Crawlers & NoScript Fallback -->
+  <noscript>
+    <div class="noscript-fallback" style="padding: 2rem; background: #111; color: #eee; font-family: sans-serif;">
+      <h1>Manish Mohan Singh — Full Stack Engineer</h1>
+      <p>Building performant MERN and AI-enabled web experiences. Specializing in React, Node.js, Express, MongoDB, and
+        Python.</p>
+      <p>Email: <a href="mailto:panwarmanish013@gmail.com" style="color:#38bdf8">panwarmanish013@gmail.com</a> | Phone:
+        +91 9027811529</p>
+      <p>GitHub: <a href="https://github.com/manish-panwarr" style="color:#38bdf8">github.com/manish-panwarr</a></p>
+    </div>
+  </noscript>
+
+  <!-- macOS Top Browser-Style Tab Bar -->
+  <header class="macos-browser-bar" role="banner">
+    <div class="browser-bar-left">
+      <div class="system-branding" title="mms.dev Portfolio">
+        <svg class="apple-icon" width="14" height="14" aria-hidden="true" style="margin-right: 4px;">
+          <use href="#icon-apple"></use>
+        </svg>
+        <span class="system-title">mms.dev</span>
+      </div>
+      <div class="browser-nav-steppers">
+        <button class="nav-step-btn" id="btn-history-back" title="Back (←)" aria-label="Previous Window">
+          <svg width="12" height="12" aria-hidden="true">
+            <use href="#icon-chevron-left"></use>
+          </svg>
+        </button>
+        <button class="nav-step-btn" id="btn-history-forward" title="Forward (→)" aria-label="Next Window">
+          <svg width="12" height="12" aria-hidden="true">
+            <use href="#icon-chevron-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dynamic Browser Tablist -->
+    <nav class="macos-tabs-scroll-container" aria-label="Open Windows Tabs">
+      <div class="macos-tablist" id="macos-tablist" role="tablist">
+        <!-- Rendered dynamically by Tab Manager -->
+      </div>
+    </nav>
+
+    <div class="browser-bar-right">
+      <!-- Mission Control Button -->
+      <button class="browser-action-btn" id="btn-mission-control" title="Mission Control (F3 or Ctrl+↑)"
+        aria-label="Open Mission Control">
+        <svg width="15" height="15" aria-hidden="true">
+          <use href="#icon-grid"></use>
+        </svg>
+      </button>
+
+      <!-- Light / Dark Mode Toggle -->
+      <button class="browser-action-btn theme-toggle-btn" id="theme-toggle" title="Toggle Light / Dark Mode"
+        aria-label="Toggle Theme">
+        <svg class="icon-dark" width="15" height="15" aria-hidden="true">
+          <use href="#icon-moon"></use>
+        </svg>
+        <svg class="icon-light" width="15" height="15" aria-hidden="true">
+          <use href="#icon-sun"></use>
+        </svg>
+      </button>
+
+      <!-- System Live Clock -->
+      <div class="system-clock tabular-nums" id="system-clock" title="Local Time">
+        12:00 PM
+      </div>
+    </div>
+  </header>
+
+  <!-- Full Viewport Window Stage (No Body Scroll) -->
+  <main class="window-stage-container" id="window-stage" role="main">
+
+    <!-- 1. HOME WINDOW -->
+    <article class="macos-window active" id="win-home" data-window-id="home" role="tabpanel" aria-labelledby="tab-home"
+      tabindex="0">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" title="Home tab cannot be closed"
+            aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" title="Minimize to Dock"
+            aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" title="Maximize Window"
+            aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title">
+          <svg class="titlebar-sf-icon" aria-hidden="true">
+            <use href="#icon-house"></use>
+          </svg>
+          Home — Overview &amp; Bio
+        </div>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <div class="window-content-scroll">
+        <div class="window-inner-content">
+          <!-- 12-Column macOS Bento Grid -->
+          <div class="home-bento-grid">
+
+            <!-- Card 1: Hero (Span 8) -->
+            <div class="bento-card bento-hero-card bento-span-8">
+              <div>
+                <div class="badge-status">
+                  <span class="pulse-dot"></span> Available for Full-Time &amp; High-Impact Roles
+                </div>
+                <h1 class="hero-name">Manish Mohan Singh</h1>
+                <p class="hero-role-title">Full Stack Engineer &bull; MERN &bull; AI Integrations</p>
+                <p class="type-body" style="color: var(--text-secondary); max-width: 580px;">
+                  Passionate engineer crafting resilient web architectures, scalable microservices, and AI-enabled
+                  digital products.
+                  Focused on high performance, clean interfaces, and elegant developer ergonomics.
+                </p>
+              </div>
+              <div class="hero-cta-group">
+                <button class="btn-primary" data-open-window="resume">
+                  <svg width="14" height="14" aria-hidden="true">
+                    <use href="#icon-doc-text"></use>
+                  </svg> View Resume
+                </button>
+                <button class="btn-secondary" data-open-window="projects">
+                  <svg width="14" height="14" aria-hidden="true">
+                    <use href="#icon-folder"></use>
+                  </svg> View Projects
+                </button>
+                <button class="btn-secondary" data-open-window="terminal">
+                  <svg width="14" height="14" aria-hidden="true">
+                    <use href="#icon-terminal"></use>
+                  </svg> Launch Terminal
+                </button>
+                <button class="btn-ghost" data-open-window="contact">
+                  <svg width="14" height="14" aria-hidden="true">
+                    <use href="#icon-envelope"></use>
+                  </svg> Contact Me
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2: Profile Photo (Span 4) -->
+            <div class="bento-card bento-photo-card bento-span-4">
+              <div class="profile-glass-frame">
+                <img src="images/profilepic.jpeg" alt="Manish Mohan Singh" class="profile-avatar-img" />
+              </div>
+              <div>
+                <div style="font-weight: 600; font-size: 15px; color: var(--text-primary);">Manish M. Singh</div>
+                <div class="profile-location-chip" style="justify-content: center; margin-top: 4px;">
+                  <svg width="12" height="12" style="color: var(--accent-primary);">
+                    <use href="#icon-doc-text"></use>
+                  </svg>
+                  Chamiyala, Uttarakhand, India
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: About (Span 6) -->
+            <div class="bento-card bento-span-6">
+              <div class="bento-card-header">
+                <div class="bento-card-title">
+                  <svg class="bento-card-icon" aria-hidden="true">
+                    <use href="#icon-doc-text"></use>
+                  </svg>
+                  About Manish
+                </div>
+              </div>
+              <div class="about-lines-group">
+                <p class="about-bullet-line">
+                  <span class="bullet-accent">1.</span>
+                  <span>Full Stack Engineer constructing high-throughput web applications with React, Node.js, Express,
+                    and MongoDB.</span>
+                </p>
+                <p class="about-bullet-line">
+                  <span class="bullet-accent">2.</span>
+                  <span>Specializes in generative AI orchestrations (Google Gemini / OpenAI) with low-latency streaming
+                    tokens and session persistence.</span>
+                </p>
+                <p class="about-bullet-line">
+                  <span class="bullet-accent">3.</span>
+                  <span>Committed to 60fps GPU acceleration, accessible interfaces, and disciplined problem-solving
+                    (150+ algorithms solved).</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4: Social / Contact Actions (Span 6) -->
+            <div class="bento-card bento-span-6">
+              <div class="bento-card-header">
+                <div class="bento-card-title">
+                  <svg class="bento-card-icon" aria-hidden="true">
+                    <use href="#icon-envelope"></use>
+                  </svg>
+                  Direct Coordinates &amp; Socials
+                </div>
+              </div>
+              <div class="social-buttons-grid">
+                <a href="https://github.com/manish-panwarr" target="_blank" rel="noopener noreferrer"
+                  class="social-action-btn">
+                  <svg aria-hidden="true">
+                    <use href="#icon-github"></use>
+                  </svg>
+                  <span>GitHub Profile</span>
+                </a>
+                <a href="https://www.linkedin.com/in/manish-mohan-singh-aab371374/" target="_blank"
+                  rel="noopener noreferrer" class="social-action-btn">
+                  <svg aria-hidden="true">
+                    <use href="#icon-linkedin"></use>
+                  </svg>
+                  <span>LinkedIn Network</span>
+                </a>
+                <button class="social-action-btn" id="btn-copy-email" data-copy-text="panwarmanish0123@gmail.com"
+                  title="Click to copy email">
+                  <svg aria-hidden="true">
+                    <use href="#icon-envelope"></use>
+                  </svg>
+                  <span id="label-copy-email">panwarmanish0123...</span>
+                </button>
+                <button class="social-action-btn" id="btn-copy-phone" data-copy-text="+919027811529"
+                  title="Click to copy phone">
+                  <svg aria-hidden="true">
+                    <use href="#icon-doc-text"></use>
+                  </svg>
+                  <span id="label-copy-phone">+91 9027811529</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 5: Live GitHub Contributions Calendar (Span 12) -->
+            <div class="bento-card gh-contributions-card bento-span-12" id="gh-contributions-card">
+              <div class="bento-card-header">
+                <div class="bento-card-title">
+                  <svg class="bento-card-icon" aria-hidden="true">
+                    <use href="#icon-github"></use>
+                  </svg>
+                  Live GitHub Contributions Calendar &bull; @manish-panwarr
+                </div>
+                <div class="gh-stats-badge-row">
+                  <span>Total: <strong id="gh-total-count" class="gh-stat-highlight tabular-nums">240+</strong></span>
+                  <span>Active Streak: <strong id="gh-streak-count" class="gh-stat-highlight tabular-nums">200+
+                      days</strong></span>
+                </div>
+              </div>
+
+              <!-- Month Labels -->
+              <div class="gh-months-row" id="gh-months-row">
+                <span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span>
+              </div>
+
+              <!-- 53x7 Heat Grid Canvas Scroll Container -->
+              <div class="gh-grid-scroll">
+                <div class="gh-grid" id="gh-contributions-grid" role="grid" aria-label="GitHub Contributions Heatmap">
+                  <!-- Dynamically rendered or skeleton fallback -->
+                </div>
+              </div>
+
+              <!-- Footer with Legend -->
+              <div class="gh-footer">
+                <span id="gh-status-note">Cached for 6h &bull; Live sync</span>
+                <div class="gh-legend">
+                  <span>Less</span>
+                  <span class="gh-legend-cell gh-lvl-0"></span>
+                  <span class="gh-legend-cell gh-lvl-1"></span>
+                  <span class="gh-legend-cell gh-lvl-2"></span>
+                  <span class="gh-legend-cell gh-lvl-3"></span>
+                  <span class="gh-legend-cell gh-lvl-4"></span>
+                  <span>More</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: Featured Projects (Span 6) -->
+            <div class="bento-card bento-span-6">
+              <div class="bento-card-header">
+                <div class="bento-card-title">
+                  <svg class="bento-card-icon" aria-hidden="true">
+                    <use href="#icon-folder"></use>
+                  </svg>
+                  Featured Projects
+                </div>
+              </div>
+              <div class="bento-projects-list">
+                <div class="bento-mini-item" data-open-window="projects">
+                  <div>
+                    <div class="bento-mini-title">AI Conversational Agent</div>
+                    <div class="bento-mini-sub">Google Gemini streaming chat with MongoDB session memory</div>
+                  </div>
+                  <span class="bento-mini-tag">AI + MERN</span>
+                </div>
+                <div class="bento-mini-item" data-open-window="projects">
+                  <div>
+                    <div class="bento-mini-title">ProcastiNot Task Suite</div>
+                    <div class="bento-mini-sub">Eisenhower matrix, streak incentives, and Pomodoro focus</div>
+                  </div>
+                  <span class="bento-mini-tag">MERN</span>
+                </div>
+                <div class="bento-mini-item" data-open-window="projects">
+                  <div>
+                    <div class="bento-mini-title">Phishing Shield Inspector</div>
+                    <div class="bento-mini-sub">Domain heuristic scanner evaluating URL security</div>
+                  </div>
+                  <span class="bento-mini-tag">Security</span>
+                </div>
+              </div>
+              <button class="bento-link-btn" data-open-window="projects">
+                View All Projects Showcase &rarr;
+              </button>
+            </div>
+
+            <!-- Card 7: Technical Arsenal / Stack (Span 6) -->
+            <div class="bento-card bento-span-6">
+              <div class="bento-card-header">
+                <div class="bento-card-title">
+                  <svg class="bento-card-icon" aria-hidden="true">
+                    <use href="#icon-cpu"></use>
+                  </svg>
+                  Technical Arsenal &bull; Core Stack
+                </div>
+              </div>
+              <div class="bento-chips-wrap">
+                <span class="bento-chip highlight">React.js</span>
+                <span class="bento-chip highlight">Node.js</span>
+                <span class="bento-chip highlight">MongoDB</span>
+                <span class="bento-chip highlight">Express.js</span>
+                <span class="bento-chip">JavaScript (ES6+)</span>
+                <span class="bento-chip">TypeScript</span>
+                <span class="bento-chip">Next.js</span>
+                <span class="bento-chip">Tailwind CSS</span>
+                <span class="bento-chip">Python</span>
+                <span class="bento-chip">Docker</span>
+                <span class="bento-chip">REST APIs</span>
+                <span class="bento-chip">PostgreSQL</span>
+                <span class="bento-chip">Git &amp; GitHub</span>
+                <span class="bento-chip">150+ LeetCode DSA</span>
+              </div>
+              <button class="bento-link-btn" data-open-window="skills">
+                Explore Detailed Skills Matrix &rarr;
+              </button>
+            </div>
+
+            <!-- Card 8: Experience Summary (Span 6) -->
+            <div class="bento-card bento-span-6">
+              <div class="bento-card-header">
+                <div class="bento-card-title">
+                  <svg class="bento-card-icon" aria-hidden="true">
+                    <use href="#icon-briefcase"></use>
+                  </svg>
+                  Experience &amp; Engagements
+                </div>
+              </div>
+              <div class="bento-experience-list">
+                <div class="bento-mini-item" data-open-window="resume">
+                  <div>
+                    <div class="bento-mini-title">Full Stack Engineer &bull; AI Conversational App</div>
+                    <div class="bento-mini-sub">Real-time token streaming, state isolation, sub-50ms UI (2025)</div>
+                  </div>
+                </div>
+                <div class="bento-mini-item" data-open-window="resume">
+                  <div>
+                    <div class="bento-mini-title">Lead Front-End &bull; ProcastiNot Task System</div>
+                    <div class="bento-mini-sub">Modular local caching, interactive matrix state (2024)</div>
+                  </div>
+                </div>
+              </div>
+              <button class="bento-link-btn" data-open-window="resume">
+                Read Full Curriculum Vitae &rarr;
+              </button>
+            </div>
+
+            <!-- Card 9: Education Summary (Span 6) -->
+            <div class="bento-card bento-span-6">
+              <div class="bento-card-header">
+                <div class="bento-card-title">
+                  <svg class="bento-card-icon" aria-hidden="true">
+                    <use href="#icon-graduationcap"></use>
+                  </svg>
+                  Academic Background
+                </div>
+              </div>
+              <div class="bento-experience-list">
+                <div class="bento-mini-item" data-open-window="education">
+                  <div>
+                    <div class="bento-mini-title">Master of Computer Applications (MCA)</div>
+                    <div class="bento-mini-sub">Graphic Era Hill University, Dehradun &bull; 2024 – 2026 (In Progress)
+                    </div>
+                  </div>
+                  <span class="bento-mini-tag">Active</span>
+                </div>
+                <div class="bento-mini-item" data-open-window="education">
+                  <div>
+                    <div class="bento-mini-title">Bachelor of Computer Applications (BCA)</div>
+                    <div class="bento-mini-sub">Graphic Era Hill University, Dehradun &bull; 2021 – 2024 (CGPA 8.6)
+                    </div>
+                  </div>
+                  <span class="bento-mini-tag">Completed</span>
+                </div>
+              </div>
+              <button class="bento-link-btn" data-open-window="education">
+                Inspect Academic Timeline &rarr;
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. RESUME WINDOW -->
+    <article class="macos-window" id="win-resume" data-window-id="resume" role="tabpanel" aria-labelledby="tab-resume"
+      tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title"><svg class="titlebar-symbol" width="14" height="14" aria-hidden="true">
+            <use href="#icon-doc-text" />
+          </svg> Resume — Curriculum Vitae</div>
+        <div class="window-actions-spacer">
+          <a href="mailto:panwarmanish0123@gmail.com?subject=Resume%20Inquiry%20-%20Manish%20Mohan%20Singh"
+            class="action-btn-sm" title="Request Official PDF"><i class="fa-solid fa-download"></i> Download CV</a>
+        </div>
+      </header>
+      <div class="window-content-scroll">
+        <div class="window-inner-content resume-layout">
+          <div class="resume-sheet">
+            <header class="resume-header">
+              <div class="resume-title-block">
+                <h2>Manish Mohan Singh</h2>
+                <p class="resume-tagline">Full Stack Engineer | MERN &amp; AI-Enabled Architectures</p>
+                <div class="resume-contact-inline">
+                  <span><i class="fa-solid fa-location-dot"></i> Uttarakhand, India</span>
+                  <span><i class="fa-solid fa-envelope"></i> panwarmanish0123@gmail.com</span>
+                  <span><i class="fa-solid fa-phone"></i> +91 9027811529</span>
+                  <span><a href="https://github.com/manish-panwarr" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-github"></i> GitHub</a></span>
+                </div>
+              </div>
+            </header>
+
+            <section class="resume-section">
+              <h3 class="resume-heading"><i class="fa-solid fa-user-astronaut"></i> Professional Summary</h3>
+              <p>
+                Dynamic and detail-oriented Full Stack Engineer with robust hands-on experience building performant,
+                scalable web applications utilizing the MERN stack (MongoDB, Express.js, React, Node.js), Python, and
+                modern cloud technologies.
+                Proven track record in integrating generative AI interfaces, building secure REST/GraphQL APIs,
+                containerizing microservices with Docker,
+                and solving 150+ algorithmic challenges on LeetCode.
+              </p>
+            </section>
+
+            <section class="resume-section">
+              <h3 class="resume-heading"><i class="fa-solid fa-code"></i> Technical Competencies</h3>
+              <div class="resume-skills-matrix">
+                <div class="matrix-row"><strong>Frontend:</strong> React.js, Next.js, JavaScript (ES6+), HTML5, CSS3,
+                  Tailwind CSS, Responsive Design, State Management.</div>
+                <div class="matrix-row"><strong>Backend:</strong> Node.js, Express.js, REST APIs, Python, JWT
+                  Authentication, Microservices Architecture.</div>
+                <div class="matrix-row"><strong>Database:</strong> MongoDB, Mongoose ODM, MySQL, PostgreSQL.</div>
+                <div class="matrix-row"><strong>DevOps &amp; Cloud:</strong> Docker, Git &amp; GitHub, Postman, Linux,
+                  Basic AWS (EC2/S3).</div>
+                <div class="matrix-row"><strong>Core Computer Science:</strong> Data Structures &amp; Algorithms,
+                  Object-Oriented Programming, System Design basics.</div>
+              </div>
+            </section>
+
+            <section class="resume-section">
+              <h3 class="resume-heading"><i class="fa-solid fa-briefcase"></i> Key Projects &amp; Experience</h3>
+              <div class="timeline-entry">
+                <div class="timeline-header">
+                  <h4>AI Conversational Application (Gemini + MERN)</h4>
+                  <span class="timeline-date">2025</span>
+                </div>
+                <p class="timeline-sub">Full Stack Engineer</p>
+                <ul class="resume-bullets">
+                  <li>Engineered a full-stack real-time chat application connecting Google Gemini Generative AI with
+                    streaming token updates.</li>
+                  <li>Architected persistent session storage and authentication with Express, Node.js, and MongoDB.</li>
+                  <li>Designed a sleek glassmorphic UI using React and Tailwind CSS ensuring sub-50ms interaction
+                    latency.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-header">
+                  <h4>ProcastiNot — Productivity &amp; Task Ecosystem</h4>
+                  <span class="timeline-date">2024</span>
+                </div>
+                <p class="timeline-sub">Lead Front-End &amp; Architecture</p>
+                <ul class="resume-bullets">
+                  <li>Built a comprehensive task manager with dynamic priority matrix, Pomodoro timer, and streak
+                    gamification.</li>
+                  <li>Reduced page render overhead through modular state isolation and local storage caching.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-header">
+                  <h4>Phishing Shield — Cybersecurity Domain Inspector</h4>
+                  <span class="timeline-date">2024</span>
+                </div>
+                <p class="timeline-sub">Full Stack Developer</p>
+                <ul class="resume-bullets">
+                  <li>Developed an interactive web scanner that evaluates target URLs against threat heuristics and
+                    external verification APIs.</li>
+                  <li>Provided clear safety scores and risk breakdowns for suspicious links.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="resume-section">
+              <h3 class="resume-heading"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+              <div class="timeline-entry">
+                <div class="timeline-header">
+                  <h4>Master of Computer Applications (MCA)</h4>
+                  <span class="timeline-date">2024 – 2026</span>
+                </div>
+                <p class="timeline-sub">Graphic Era Hill University, Dehradun</p>
+              </div>
+              <div class="timeline-entry">
+                <div class="timeline-header">
+                  <h4>Bachelor of Computer Applications (BCA)</h4>
+                  <span class="timeline-date">2021 – 2024</span>
+                </div>
+                <p class="timeline-sub">Graphic Era Hill University, Dehradun</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. SERVICES WINDOW -->
+    <article class="macos-window" id="win-services" data-window-id="services" role="tabpanel"
+      aria-labelledby="tab-services" tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title"><svg class="titlebar-symbol" width="14" height="14" aria-hidden="true">
+            <use href="#icon-briefcase" />
+          </svg> Services — Engineering &amp; Solutions</div>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <div class="window-content-scroll">
+        <div class="window-inner-content">
+          <div class="section-intro">
+            <h2>Engineering Capabilities &amp; Services</h2>
+            <p>From initial architecture to production launch: scalable, accessible, and high-performance engineering.
+            </p>
+          </div>
+
+          <div class="services-cards-grid">
+            <div class="service-card">
+              <div class="service-icon"><svg width="22" height="22" aria-hidden="true">
+                  <use href="#icon-folder" />
+                </svg></div>
+              <h3>Full-Stack Web Development</h3>
+              <p>End-to-end web apps constructed with React, Node.js, Express, and MongoDB. Clean component hierarchy,
+                reactive state, and optimal SEO.</p>
+              <ul class="service-list">
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Single Page Applications (SPA)</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Responsive &amp; Mobile-First UIs</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Component Design Systems</li>
+              </ul>
+              <button class="service-cta-btn" onclick="windowManager.openWindow('contact')">Request Service
+                &rarr;</button>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon"><svg width="22" height="22" aria-hidden="true">
+                  <use href="#icon-cpu" />
+                </svg></div>
+              <h3>AI &amp; Automation Integration</h3>
+              <p>Injecting generative AI into user workflows. Streaming chat completions, function calling, vector
+                embeddings, and intelligent agents.</p>
+              <ul class="service-list">
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> OpenAI &amp; Gemini API Orchestration</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Real-time Streaming Interfaces</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Automated Workflow Scripts</li>
+              </ul>
+              <button class="service-cta-btn" onclick="windowManager.openWindow('contact')">Request Service
+                &rarr;</button>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon"><svg width="22" height="22" aria-hidden="true">
+                  <use href="#icon-terminal" />
+                </svg></div>
+              <h3>REST &amp; Backend API Engineering</h3>
+              <p>Resilient server architectures with robust rate limiting, JWT token security, granular input
+                validation, and clean error handling.</p>
+              <ul class="service-list">
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Scalable Express / Node.js Backends</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Database Modeling &amp; Indexes</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Defensible Microservices</li>
+              </ul>
+              <button class="service-cta-btn" onclick="windowManager.openWindow('contact')">Request Service
+                &rarr;</button>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon"><svg width="22" height="22" aria-hidden="true">
+                  <use href="#icon-briefcase" />
+                </svg></div>
+              <h3>Cloud &amp; DevOps Essentials</h3>
+              <p>Containerization with Docker, repeatable environments, automated build pipelines, and production
+                deployments on cloud providers.</p>
+              <ul class="service-list">
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Docker Containerization</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Git Workflow &amp; CI/CD Pipelines</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Cloud Hosting &amp; Domain Setup</li>
+              </ul>
+              <button class="service-cta-btn" onclick="windowManager.openWindow('contact')">Request Service
+                &rarr;</button>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon"><svg width="22" height="22" aria-hidden="true">
+                  <use href="#icon-rosette" />
+                </svg></div>
+              <h3>Performance &amp; SEO Optimization</h3>
+              <p>Auditing and optimizing Core Web Vitals to achieve 95+ Lighthouse scores: code-splitting, lazy loading,
+                image pipeline, and semantic markup.</p>
+              <ul class="service-list">
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> 60fps Smooth GPU Animations</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Zero Layout Shifts (CLS)</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Rich Snippets &amp; Structured Schema</li>
+              </ul>
+              <button class="service-cta-btn" onclick="windowManager.openWindow('contact')">Request Service
+                &rarr;</button>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon"><svg width="22" height="22" aria-hidden="true">
+                  <use href="#icon-doc-text" />
+                </svg></div>
+              <h3>Security &amp; Best Practices</h3>
+              <p>Implementing defensible applications following OWASP guidelines, sanitize user input, preventing
+                XSS/CSRF, and securing auth flows.</p>
+              <ul class="service-list">
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Secure JWT &amp; HTTP-only Cookies</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Input Sanitization &amp; CORS Config</li>
+                <li><svg width="12" height="12" class="bullet-sym" aria-hidden="true">
+                    <use href="#icon-rosette" />
+                  </svg> Defensible Headers &amp; Rate Limits</li>
+              </ul>
+              <button class="service-cta-btn" onclick="windowManager.openWindow('contact')">Request Service
+                &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. PROJECTS WINDOW -->
+    <article class="macos-window" id="win-projects" data-window-id="projects" role="tabpanel"
+      aria-labelledby="tab-projects" tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title"><svg class="titlebar-symbol" width="14" height="14" aria-hidden="true">
+            <use href="#icon-folder" />
+          </svg> Projects — Portfolio Showcase</div>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <div class="window-content-scroll">
+        <!-- Sticky filter bar -->
+        <div class="projects-filter-bar" id="projects-filter-bar">
+          <div class="projects-search-wrap">
+            <svg width="14" height="14" aria-hidden="true" class="search-icon">
+              <use href="#icon-doc-text" />
+            </svg>
+            <input type="search" id="project-search" class="project-search-input" placeholder="Search projects…"
+              autocomplete="off" aria-label="Search projects" />
+            <button class="project-search-clear" id="project-search-clear" aria-label="Clear search"
+              style="display:none">×</button>
+          </div>
+          <div class="project-filter-pills" role="toolbar" aria-label="Project Filter">
+            <button class="filter-pill active" data-filter="all">All</button>
+            <button class="filter-pill" data-filter="mern">MERN</button>
+            <button class="filter-pill" data-filter="ai">AI / ML</button>
+            <button class="filter-pill" data-filter="security">Security</button>
+          </div>
+          <span class="projects-result-count" id="projects-result-count" aria-live="polite"></span>
+        </div>
+        <div class="window-inner-content">
+          <div class="projects-grid" id="projects-grid">
+
+            <!-- Project 1: AI Chat App -->
+            <div class="project-card" data-category="ai mern">
+              <div class="project-thumb-box">
+                <img src="images/ai-chat-app.png" alt="AI Chat Application" width="480" height="300" loading="lazy" />
+                <span class="project-tag-badge">AI + MERN</span>
+              </div>
+              <div class="project-info">
+                <h3>AI Chat Application</h3>
+                <p>Full-stack conversational agent powered by Google Gemini API with token streaming, prompt
+                  persistence, and session management.</p>
+                <div class="tech-tag-row">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Gemini API</span>
+                  <span class="tech-tag">MongoDB</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/manish-panwarr" target="_blank" rel="noopener noreferrer"
+                    class="link-btn"><svg width="12" height="12" class="btn-sym" aria-hidden="true">
+                      <use href="#icon-github" />
+                    </svg> Source</a>
+                  <a href="https://mms.dev/" target="_blank" rel="noopener noreferrer" class="link-btn primary">Live
+                    Demo &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: ProcastiNot -->
+            <div class="project-card" data-category="mern">
+              <div class="project-thumb-box">
+                <img src="images/procastinot.png" alt="ProcastiNot Task Manager" width="480" height="300"
+                  loading="lazy" />
+                <span class="project-tag-badge">Productivity</span>
+              </div>
+              <div class="project-info">
+                <h3>ProcastiNot Task Suite</h3>
+                <p>Gamified productivity suite featuring an Eisenhower priority matrix, streak incentives, and custom
+                  Pomodoro focus workflows.</p>
+                <div class="tech-tag-row">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Express</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Tailwind</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/manish-panwarr" target="_blank" rel="noopener noreferrer"
+                    class="link-btn"><svg width="12" height="12" class="btn-sym" aria-hidden="true">
+                      <use href="#icon-github" />
+                    </svg> Source</a>
+                  <a href="https://mms.dev/" target="_blank" rel="noopener noreferrer" class="link-btn primary">Live
+                    Demo &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Phishing Shield -->
+            <div class="project-card" data-category="security">
+              <div class="project-thumb-box">
+                <img src="images/phising-site.png" alt="Phishing Shield Security" width="480" height="300"
+                  loading="lazy" />
+                <span class="project-tag-badge">Cybersecurity</span>
+              </div>
+              <div class="project-info">
+                <h3>Phishing Shield</h3>
+                <p>Real-time URL scanner and fraudulent domain detector utilizing security heuristics, WHOIS queries,
+                  and API risk calculations.</p>
+                <div class="tech-tag-row">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Python API</span>
+                  <span class="tech-tag">Security Heuristics</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/manish-panwarr" target="_blank" rel="noopener noreferrer"
+                    class="link-btn"><svg width="12" height="12" class="btn-sym" aria-hidden="true">
+                      <use href="#icon-github" />
+                    </svg> Source</a>
+                  <a href="https://mms.dev/" target="_blank" rel="noopener noreferrer" class="link-btn primary">Live
+                    Demo &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4: RentEase -->
+            <div class="project-card" data-category="mern">
+              <div class="project-thumb-box">
+                <img src="images/mcreation_bg.jpeg" alt="RentEase Property Marketplace" width="480" height="300"
+                  loading="lazy" />
+                <span class="project-tag-badge">MERN Platform</span>
+              </div>
+              <div class="project-info">
+                <h3>RentEase Property Marketplace</h3>
+                <p>Full-stack rental marketplace with dynamic query filtering, multi-image upload handling, and direct
+                  landlord booking inquiries.</p>
+                <div class="tech-tag-row">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">MongoDB</span>
+                  <span class="tech-tag">Cloudinary</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/manish-panwarr" target="_blank" rel="noopener noreferrer"
+                    class="link-btn"><svg width="12" height="12" class="btn-sym" aria-hidden="true">
+                      <use href="#icon-github" />
+                    </svg> Source</a>
+                  <a href="https://mms.dev/" target="_blank" rel="noopener noreferrer" class="link-btn primary">Live
+                    Demo &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5: M-Creation Agency -->
+            <div class="project-card" data-category="client">
+              <div class="project-thumb-box">
+                <img src="images/mcreation.png" alt="M-Creation Agency" width="480" height="300" loading="lazy" />
+                <span class="project-tag-badge">Agency Showcase</span>
+              </div>
+              <div class="project-info">
+                <h3>M-Creation Digital Media Agency</h3>
+                <p>High-end agency showcase featuring rich interactive media galleries, lead capture channels, and
+                  smooth client case study views.</p>
+                <div class="tech-tag-row">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">Modern UI</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/manish-panwarr" target="_blank" rel="noopener noreferrer"
+                    class="link-btn"><svg width="12" height="12" class="btn-sym" aria-hidden="true">
+                      <use href="#icon-github" />
+                    </svg> Source</a>
+                  <a href="https://mms.dev/" target="_blank" rel="noopener noreferrer" class="link-btn primary">Live
+                    Demo &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. CERTIFICATES WINDOW -->
+    <article class="macos-window" id="win-certificates" data-window-id="certificates" role="tabpanel"
+      aria-labelledby="tab-certificates" tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title"><svg class="titlebar-symbol" width="14" height="14" aria-hidden="true">
+            <use href="#icon-rosette" />
+          </svg> Certificates — Verified Credentials</div>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <div class="window-content-scroll">
+        <div class="window-inner-content">
+          <div class="section-intro">
+            <h2>Verified Credentials &amp; Certifications</h2>
+            <p>Industry-standard coursework, simulations, and algorithmic badges. Click any certificate for
+              high-resolution inspection.</p>
+          </div>
+
+          <div class="certs-grid">
+            <div class="cert-card" data-cert-title="Scaler DSA 200 Days Challenge"
+              data-cert-img="images/ScalerDSA-certificate.png">
+              <div class="cert-img-box">
+                <img src="images/ScalerDSA-certificate.png" alt="Scaler DSA Certificate" loading="lazy" />
+              </div>
+              <div class="cert-info">
+                <h4>Scaler DSA Problem Solving</h4>
+                <p>Data Structures &amp; Algorithms Mastery &bull; 200 Days</p>
+                <span class="cert-verify-link"><i class="fa-solid fa-magnifying-glass"></i> Click to Inspect</span>
+              </div>
+            </div>
+
+            <div class="cert-card" data-cert-title="AWS Cloud Practitioner Essentials"
+              data-cert-img="images/coursera-aws.png">
+              <div class="cert-img-box">
+                <img src="images/coursera-aws.png" alt="AWS Cloud Practitioner" loading="lazy" />
+              </div>
+              <div class="cert-info">
+                <h4>AWS Cloud Essentials</h4>
+                <p>Coursera &bull; Cloud Infrastructure &amp; Services</p>
+                <span class="cert-verify-link"><i class="fa-solid fa-magnifying-glass"></i> Click to Inspect</span>
+              </div>
+            </div>
+
+            <div class="cert-card" data-cert-title="DevOps & Cloud Architecture" data-cert-img="images/DevOps.png">
+              <div class="cert-img-box">
+                <img src="images/DevOps.png" alt="DevOps Certificate" loading="lazy" />
+              </div>
+              <div class="cert-info">
+                <h4>DevOps &amp; Cloud Deployment</h4>
+                <p>Docker, CI/CD &amp; Infrastructure as Code</p>
+                <span class="cert-verify-link"><i class="fa-solid fa-magnifying-glass"></i> Click to Inspect</span>
+              </div>
+            </div>
+
+            <div class="cert-card" data-cert-title="TCS Cybersecurity IAM"
+              data-cert-img="images/tcs-cybersecurity-IAM.png">
+              <div class="cert-img-box">
+                <img src="images/tcs-cybersecurity-IAM.png" alt="TCS Cybersecurity IAM" loading="lazy" />
+              </div>
+              <div class="cert-info">
+                <h4>TCS Cybersecurity &amp; IAM</h4>
+                <p>Identity &amp; Access Management Protocols</p>
+                <span class="cert-verify-link"><i class="fa-solid fa-magnifying-glass"></i> Click to Inspect</span>
+              </div>
+            </div>
+
+            <div class="cert-card" data-cert-title="Tata Forage Developer Simulation"
+              data-cert-img="images/tata-forage.png">
+              <div class="cert-img-box">
+                <img src="images/tata-forage.png" alt="Tata Forage" loading="lazy" />
+              </div>
+              <div class="cert-info">
+                <h4>Tata Tech Simulation</h4>
+                <p>Data Visualization &amp; Engineering Simulation</p>
+                <span class="cert-verify-link"><i class="fa-solid fa-magnifying-glass"></i> Click to Inspect</span>
+              </div>
+            </div>
+
+            <div class="cert-card" data-cert-title="AWS Forage Solutions Architecture"
+              data-cert-img="images/aws-forage.png">
+              <div class="cert-img-box">
+                <img src="images/aws-forage.png" alt="AWS Forage" loading="lazy" />
+              </div>
+              <div class="cert-info">
+                <h4>AWS Solutions Architecture</h4>
+                <p>Scalable Cloud Systems Simulation</p>
+                <span class="cert-verify-link"><i class="fa-solid fa-magnifying-glass"></i> Click to Inspect</span>
+              </div>
+            </div>
+
+            <div class="cert-card" data-cert-title="Accenture Virtual Experience" data-cert-img="images/accenture.png">
+              <div class="cert-img-box">
+                <img src="images/accenture.png" alt="Accenture Virtual Experience" loading="lazy" />
+              </div>
+              <div class="cert-info">
+                <h4>Accenture Developer Program</h4>
+                <p>Enterprise Software Development Simulation</p>
+                <span class="cert-verify-link"><i class="fa-solid fa-magnifying-glass"></i> Click to Inspect</span>
+              </div>
+            </div>
+
+            <div class="cert-card" data-cert-title="Udemy Full-Stack MERN Mastery"
+              data-cert-img="images/udemy-MERN.png">
+              <div class="cert-img-box">
+                <img src="images/udemy-MERN.png" alt="Udemy MERN" loading="lazy" />
+              </div>
+              <div class="cert-info">
+                <h4>Full Stack MERN Mastery</h4>
+                <p>Udemy &bull; Modern React, Node &amp; MongoDB</p>
+                <span class="cert-verify-link"><i class="fa-solid fa-magnifying-glass"></i> Click to Inspect</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. EDUCATION WINDOW -->
+    <article class="macos-window" id="win-education" data-window-id="education" role="tabpanel"
+      aria-labelledby="tab-education" tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title"><svg class="titlebar-symbol" width="14" height="14" aria-hidden="true">
+            <use href="#icon-graduationcap" />
+          </svg> Education — Academic Journey</div>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <div class="window-content-scroll" id="edu-scroll-container">
+        <div class="window-inner-content">
+          <div class="edu-header-row">
+            <div class="section-intro">
+              <h2>Academic Credentials &amp; Degrees</h2>
+              <p>Rigorous computer science foundation, distributed architectures, algorithms, and applied mathematics.
+              </p>
+            </div>
+            <div class="edu-nav-controls" aria-label="Education Timeline Controls">
+              <button class="edu-nav-btn" id="edu-btn-prev" aria-label="Previous Education Milestone"
+                title="Previous milestone (←)">
+                <svg width="14" height="14" aria-hidden="true">
+                  <use href="#icon-chevron-left" />
+                </svg>
+              </button>
+              <button class="edu-nav-btn" id="edu-btn-next" aria-label="Next Education Milestone"
+                title="Next milestone (→)">
+                <svg width="14" height="14" aria-hidden="true">
+                  <use href="#icon-chevron-right" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="edu-timeline-container" id="edu-timeline" tabindex="0" role="region"
+            aria-label="Horizontal education timeline">
+            <!-- Center Track & Dynamic Scroll Progress -->
+            <div class="edu-timeline-track" aria-hidden="true">
+              <div class="edu-timeline-progress" id="edu-timeline-progress"></div>
+            </div>
+
+            <div class="edu-timeline-list" id="edu-timeline-list">
+              <!-- Item 1: Secondary High School (Class X) - 2018-2019 (Oldest) -->
+              <div class="edu-timeline-item completed" data-index="0">
+                <div class="edu-timeline-node">
+                  <div class="edu-node-dot">
+                    <svg width="14" height="14" aria-hidden="true">
+                      <use href="#icon-rosette" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="edu-timeline-card">
+                  <div class="edu-card-topbar">
+                    <span class="edu-year-chip">2018 — 2019</span>
+                    <span class="edu-status-badge completed">Completed</span>
+                    <span class="edu-score-chip">Distinction</span>
+                  </div>
+                  <h3 class="edu-card-title">Secondary High School (Class X)</h3>
+                  <div class="edu-card-institute">Uttarakhand State Board</div>
+                  <p class="edu-card-desc">Strong mathematical foundation, General Sciences, Logical Reasoning, and
+                    English language studies.</p>
+                  <div class="edu-course-tags">
+                    <span class="edu-tag">Mathematics</span>
+                    <span class="edu-tag">General Science</span>
+                    <span class="edu-tag">Logical Reasoning</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2: Higher Secondary (Class XII) - 2020-2021 -->
+              <div class="edu-timeline-item completed" data-index="1">
+                <div class="edu-timeline-node">
+                  <div class="edu-node-dot">
+                    <svg width="14" height="14" aria-hidden="true">
+                      <use href="#icon-doc-text" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="edu-timeline-card">
+                  <div class="edu-card-topbar">
+                    <span class="edu-year-chip">2020 — 2021</span>
+                    <span class="edu-status-badge completed">Completed</span>
+                    <span class="edu-score-chip">First Division</span>
+                  </div>
+                  <h3 class="edu-card-title">Higher Secondary School (Class XII)</h3>
+                  <div class="edu-card-institute">Uttarakhand State Board</div>
+                  <p class="edu-card-desc">Science stream specialization in Physics, Chemistry, and Advanced Mathematics
+                    with distinction.</p>
+                  <div class="edu-course-tags">
+                    <span class="edu-tag">Mathematics</span>
+                    <span class="edu-tag">Physics</span>
+                    <span class="edu-tag">Computer Science</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3: BCA (Graduation) - 2021-2024 -->
+              <div class="edu-timeline-item completed" data-index="2">
+                <div class="edu-timeline-node">
+                  <div class="edu-node-dot">
+                    <svg width="14" height="14" aria-hidden="true">
+                      <use href="#icon-graduationcap" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="edu-timeline-card">
+                  <div class="edu-card-topbar">
+                    <span class="edu-year-chip">2021 — 2024</span>
+                    <span class="edu-status-badge completed">Completed</span>
+                    <span class="edu-score-chip highlight">CGPA 8.6 / 10</span>
+                  </div>
+                  <h3 class="edu-card-title">Bachelor of Computer Applications (BCA)</h3>
+                  <div class="edu-card-institute">Graphic Era Hill University, Dehradun</div>
+                  <p class="edu-card-desc">Core grounding in Object-Oriented Programming (Java, C++), Data Structures,
+                    Relational Database Management Systems, and Web Applications.</p>
+                  <div class="edu-course-tags">
+                    <span class="edu-tag">Data Structures &amp; OOP</span>
+                    <span class="edu-tag">RDBMS &amp; SQL</span>
+                    <span class="edu-tag">Operating Systems</span>
+                    <span class="edu-tag">Computer Networks</span>
+                    <span class="edu-tag">Web Technologies</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4: MCA (Masters) - 2024-2026 (Newest) -->
+              <div class="edu-timeline-item in-progress" data-index="3">
+                <div class="edu-timeline-node">
+                  <span class="edu-node-pulse" aria-hidden="true"></span>
+                  <div class="edu-node-dot">
+                    <svg width="14" height="14" aria-hidden="true">
+                      <use href="#icon-graduationcap" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="edu-timeline-card">
+                  <div class="edu-card-topbar">
+                    <span class="edu-year-chip">2024 — 2026</span>
+                    <span class="edu-status-badge in-progress">
+                      <span class="pulse-indicator"></span> In Progress
+                    </span>
+                    <span class="edu-score-chip">First Division</span>
+                  </div>
+                  <h3 class="edu-card-title">Master of Computer Applications (MCA)</h3>
+                  <div class="edu-card-institute">Graphic Era Hill University / Manipal</div>
+                  <p class="edu-card-desc">Advanced study in Cloud Computing, Distributed Web Architecture, Machine
+                    Learning, and Enterprise Database Systems.</p>
+                  <div class="edu-course-tags">
+                    <span class="edu-tag">Cloud Systems</span>
+                    <span class="edu-tag">Distributed Computing</span>
+                    <span class="edu-tag">Advanced DSA</span>
+                    <span class="edu-tag">AI Applications</span>
+                    <span class="edu-tag">System Design</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. SKILLS WINDOW -->
+    <article class="macos-window" id="win-skills" data-window-id="skills" role="tabpanel" aria-labelledby="tab-skills"
+      tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title"><svg class="titlebar-symbol" width="14" height="14" aria-hidden="true">
+            <use href="#icon-cpu" />
+          </svg> Skills — Arsenal &amp; LeetCode Metrics</div>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <div class="window-content-scroll">
+        <div class="window-inner-content">
+
+          <!-- LeetCode Interactive Section -->
+          <div class="skills-dashboard-header">
+            <h2>Technical Stack &amp; Algorithmic Mastery</h2>
+            <p>Constantly refining problem-solving abilities and staying fluent in full-stack tools.</p>
+          </div>
+
+          <div class="leetcode-overview-panel" id="lc-panel">
+            <div class="lc-profile-bar">
+              <div class="lc-brand">
+                <i class="fa-solid fa-code"></i>
+                <span>LeetCode Live Activity &bull; <strong>@g7pE7qxNks</strong></span>
+              </div>
+              <div class="lc-meta-right">
+                <span class="lc-sync-badge" id="lc-sync-status">Loading data...</span>
+                <a href="https://leetcode.com/u/g7pE7qxNks/" target="_blank" rel="noopener noreferrer"
+                  class="lc-external-btn">
+                  Official Profile <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Visual Metrics: Solved Ring + Difficulty Progress Bars + Badges -->
+            <div class="lc-metrics-layout">
+              <!-- 1. Solved Ring -->
+              <div class="lc-ring-card">
+                <div class="lc-ring-wrapper">
+                  <svg class="lc-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+                    <circle class="lc-ring-bg" cx="50" cy="50" r="40" />
+                    <circle class="lc-ring-fill" id="lc-ring-circle" cx="50" cy="50" r="40" stroke-dasharray="251.2"
+                      stroke-dashoffset="251.2" />
+                  </svg>
+                  <div class="lc-ring-inner">
+                    <span class="lc-ring-value" id="lc-solved">--</span>
+                    <span class="lc-ring-label">Solved</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. Easy / Medium / Hard Progress Bars -->
+              <div class="lc-bars-card">
+                <div class="lc-bar-row easy">
+                  <div class="lc-bar-info">
+                    <span class="lc-bar-name">Easy</span>
+                    <span class="lc-bar-count"><strong id="lc-easy">--</strong></span>
+                  </div>
+                  <div class="lc-bar-track">
+                    <div class="lc-bar-progress" id="lc-bar-easy" style="width: 0%"></div>
+                  </div>
+                </div>
+                <div class="lc-bar-row medium">
+                  <div class="lc-bar-info">
+                    <span class="lc-bar-name">Medium</span>
+                    <span class="lc-bar-count"><strong id="lc-medium">--</strong></span>
+                  </div>
+                  <div class="lc-bar-track">
+                    <div class="lc-bar-progress" id="lc-bar-medium" style="width: 0%"></div>
+                  </div>
+                </div>
+                <div class="lc-bar-row hard">
+                  <div class="lc-bar-info">
+                    <span class="lc-bar-name">Hard</span>
+                    <span class="lc-bar-count"><strong id="lc-hard">--</strong></span>
+                  </div>
+                  <div class="lc-bar-track">
+                    <div class="lc-bar-progress" id="lc-bar-hard" style="width: 0%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Key Badges: Ranking, Active Days, Streak -->
+              <div class="lc-stats-grid">
+                <div class="lc-stat-card">
+                  <span class="lc-stat-title">Global Ranking</span>
+                  <span class="lc-stat-value" id="lc-ranking">--</span>
+                </div>
+                <div class="lc-stat-card streak">
+                  <span class="lc-stat-title">Active Streak</span>
+                  <span class="lc-stat-value" id="lc-streak">--</span>
+                </div>
+                <div class="lc-stat-card active-days">
+                  <span class="lc-stat-title">Active Days</span>
+                  <span class="lc-stat-value" id="lc-active-days">--</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Heatmap Calendar Canvas -->
+            <div class="lc-heatmap-container">
+              <div class="lc-heatmap-header">
+                <span>Recent Activity Heatmap</span>
+                <div class="lc-heatmap-legend">
+                  <span>Less</span>
+                  <span class="legend-box lvl-0"></span>
+                  <span class="legend-box lvl-1"></span>
+                  <span class="legend-box lvl-2"></span>
+                  <span class="legend-box lvl-3"></span>
+                  <span class="legend-box lvl-4"></span>
+                  <span>More</span>
+                </div>
+              </div>
+              <div class="lc-month-labels" id="lc-month-labels"></div>
+              <div class="lc-graph" id="lc-graph">
+                <!-- Dynamically populated 7-row weekly grid -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Categories Grid -->
+          <div class="skills-categories-grid">
+            <div class="skill-category-card">
+              <div class="cat-header">
+                <i class="fa-brands fa-react"></i>
+                <h3>Frontend Development</h3>
+              </div>
+              <div class="skill-chips-wrap">
+                <span class="skill-chip">React.js</span>
+                <span class="skill-chip">Next.js</span>
+                <span class="skill-chip">JavaScript (ES6+)</span>
+                <span class="skill-chip">HTML5 &amp; CSS3</span>
+                <span class="skill-chip">Tailwind CSS</span>
+                <span class="skill-chip">Responsive Web Design</span>
+                <span class="skill-chip">Web Accessibility (a11y)</span>
+              </div>
+            </div>
+
+            <div class="skill-category-card">
+              <div class="cat-header">
+                <i class="fa-brands fa-node-js"></i>
+                <h3>Backend Development</h3>
+              </div>
+              <div class="skill-chips-wrap">
+                <span class="skill-chip">Node.js</span>
+                <span class="skill-chip">Express.js</span>
+                <span class="skill-chip">RESTful APIs</span>
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">JWT Authentication</span>
+                <span class="skill-chip">CORS &amp; Middleware</span>
+              </div>
+            </div>
+
+            <div class="skill-category-card">
+              <div class="cat-header">
+                <i class="fa-solid fa-database"></i>
+                <h3>Databases &amp; Storage</h3>
+              </div>
+              <div class="skill-chips-wrap">
+                <span class="skill-chip">MongoDB</span>
+                <span class="skill-chip">Mongoose ODM</span>
+                <span class="skill-chip">MySQL</span>
+                <span class="skill-chip">PostgreSQL</span>
+                <span class="skill-chip">Database Indexing</span>
+              </div>
+            </div>
+
+            <div class="skill-category-card">
+              <div class="cat-header">
+                <i class="fa-solid fa-server"></i>
+                <h3>DevOps &amp; Infrastructure</h3>
+              </div>
+              <div class="skill-chips-wrap">
+                <span class="skill-chip">Docker</span>
+                <span class="skill-chip">Git &amp; GitHub</span>
+                <span class="skill-chip">Postman</span>
+                <span class="skill-chip">Linux CLI</span>
+                <span class="skill-chip">AWS Basics (EC2, S3)</span>
+                <span class="skill-chip">Vite &amp; Tooling</span>
+              </div>
+            </div>
+
+            <div class="skill-category-card">
+              <div class="cat-header">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Core Computer Science</h3>
+              </div>
+              <div class="skill-chips-wrap">
+                <span class="skill-chip">Data Structures &amp; Algorithms</span>
+                <span class="skill-chip">Object-Oriented Programming (OOP)</span>
+                <span class="skill-chip">System Design Fundamentals</span>
+                <span class="skill-chip">Operating Systems</span>
+                <span class="skill-chip">Computer Networks</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 8. CONTACT WINDOW -->
+    <article class="macos-window" id="win-contact" data-window-id="contact" role="tabpanel"
+      aria-labelledby="tab-contact" tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title"><svg class="titlebar-symbol" width="14" height="14" aria-hidden="true">
+            <use href="#icon-envelope" />
+          </svg> Contact — Direct Coordinates</div>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <div class="window-content-scroll">
+        <div class="window-inner-content">
+          <div class="section-intro">
+            <h2>Get in Touch</h2>
+            <p>Have an opportunity, a project proposal, or want to discuss full-stack &amp; AI architectures? Send a
+              message directly.</p>
+          </div>
+
+          <div class="contact-split-layout">
+            <!-- Mail Composer Window -->
+            <div class="contact-compose-panel">
+              <div class="compose-header">
+                <span class="compose-label">New Message &bull; Mail.app</span>
+              </div>
+              <form id="contact-form" class="macos-form">
+                <div class="form-row">
+                  <label for="contact-name">From (Name):</label>
+                  <input type="text" id="contact-name" name="name" placeholder="Your Name" required />
+                </div>
+                <div class="form-row">
+                  <label for="contact-email">Email:</label>
+                  <input type="email" id="contact-email" name="email" placeholder="your.email@example.com" required />
+                </div>
+                <div class="form-row">
+                  <label for="contact-subject">Subject:</label>
+                  <input type="text" id="contact-subject" name="subject" placeholder="Project Inquiry / Opportunity"
+                    required />
+                </div>
+                <div class="form-row message-row">
+                  <label for="contact-message">Message:</label>
+                  <textarea id="contact-message" name="message" rows="6" placeholder="Write your message here..."
+                    required></textarea>
+                </div>
+                <div class="form-actions-row">
+                  <button type="submit" class="btn-primary" id="btn-submit-contact">
+                    <i class="fa-solid fa-paper-plane"></i> Send Transmission
+                  </button>
+                  <div id="contact-result-msg" class="form-status-msg" role="status"></div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Direct Details & Coordinates Panel -->
+            <div class="contact-info-panel">
+              <div class="info-card">
+                <h3>Direct Coordinates</h3>
+                <div class="coord-item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <div>
+                    <span class="coord-label">Email</span>
+                    <a href="mailto:panwarmanish0123@gmail.com" class="coord-value">panwarmanish0123@gmail.com</a>
+                  </div>
+                </div>
+                <div class="coord-item">
+                  <i class="fa-solid fa-phone"></i>
+                  <div>
+                    <span class="coord-label">Phone</span>
+                    <a href="tel:+919027811529" class="coord-value">+91 9027811529</a>
+                  </div>
+                </div>
+                <div class="coord-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <div>
+                    <span class="coord-label">Location</span>
+                    <span class="coord-value">Chamiyala, Uttarakhand 249125, India</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Map Embed -->
+              <div class="contact-map-card">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.4306900871456!2d78.62490932549659!3d30.480559524706877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908ff3125084f7b%3A0x77e41fbcec254be6!2sChamiyala%2C%20Uttarakhand%20249125!5e0!3m2!1sen!2sin!4v1771060261559!5m2!1sen!2sin"
+                  width="100%" height="200" style="border: 0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade" title="Location Map">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9. WEBSITE PREVIEW WINDOW -->
+    <article class="macos-window" id="win-website" data-window-id="website" role="tabpanel"
+      aria-labelledby="tab-website" tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title"><svg class="titlebar-symbol" width="14" height="14" aria-hidden="true">
+            <use href="#icon-globe" />
+          </svg> Website — mmsingh.me</div>
+        <div class="window-actions-spacer">
+          <a href="https://mmsingh.me/" target="_blank" rel="noopener noreferrer" class="titlebar-ext-link"
+            title="Open in new window">
+            <svg width="12" height="12" aria-hidden="true">
+              <use href="#icon-chevron-right" />
+            </svg> Open in new tab
+          </a>
+        </div>
+      </header>
+      <div class="window-content-scroll website-window-content" id="website-content-scroll">
+        <div class="website-iframe-container" id="website-iframe-container">
+          <div class="website-loader-overlay" id="website-loader">
+            <div class="website-spinner"></div>
+            <span>Connecting to mmsingh.me...</span>
+          </div>
+          <iframe id="website-iframe" src="https://mmsingh.me/" title="mmsingh.me Live Website Preview"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups" loading="lazy"
+            allow="fullscreen"></iframe>
+          <!-- Fallback card displayed if blocked by X-Frame-Options or timeout after 8s -->
+          <div class="website-fallback-card" id="website-fallback-card" style="display: none;" aria-live="polite">
+            <div class="fallback-icon-box">
+              <svg width="40" height="40" aria-hidden="true">
+                <use href="#icon-globe" />
+              </svg>
+            </div>
+            <h3>External Website Preview Blocked</h3>
+            <p><strong>https://mmsingh.me/</strong> protects against iframe embedding via strict
+              <code>X-Frame-Options: SAMEORIGIN</code> / <code>frame-ancestors</code> security headers.
+            </p>
+            <div class="fallback-actions">
+              <button class="btn-primary" id="btn-open-portfolio-direct">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open mmsingh.me in New Tab
+              </button>
+              <button class="btn-secondary" id="btn-retry-iframe">
+                Retry Connection
+              </button>
+            </div>
+            <span class="fallback-direct-url">Direct URL: <a href="https://mmsingh.me/" target="_blank"
+                rel="noopener noreferrer">https://mmsingh.me/</a></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10. TERMINAL WINDOW -->
+    <article class="macos-window" id="win-terminal" data-window-id="terminal" role="tabpanel"
+      aria-labelledby="tab-terminal" tabindex="0" aria-hidden="true">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" data-action="close" aria-label="Close Window"></button>
+          <button class="traffic-dot dot-minimize" data-action="minimize" aria-label="Minimize Window"></button>
+          <button class="traffic-dot dot-zoom" data-action="zoom" aria-label="Maximize Window"></button>
+        </div>
+        <div class="window-title">
+          <svg class="titlebar-sf-icon" aria-hidden="true">
+            <use href="#icon-terminal"></use>
+          </svg>
+          mms — zsh — 80×24
+        </div>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <!-- Output scroll area: flex:1 overflow-y:auto -->
+      <div class="window-content-scroll terminal-output-scroll" id="terminal-output-scroll">
+        <div class="terminal-body" id="terminal-body" role="log" aria-live="polite" aria-atomic="false">
+          <!-- Live boot sequence and command log -->
+        </div>
+      </div>
+      <!-- Pinned input row: flex-none, never scrolled -->
+      <div class="terminal-input-row">
+        <div class="terminal-cli-line">
+          <label for="terminal-cli-input" class="terminal-prompt">visitor@mmsdev&nbsp;~&nbsp;%&nbsp;</label>
+          <div class="terminal-input-wrapper">
+            <input type="text" id="terminal-cli-input" class="terminal-input" autocomplete="off" autocorrect="off"
+              autocapitalize="off" spellcheck="false" aria-label="Terminal Command Input" />
+            <span class="terminal-block-cursor" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="terminal-mobile-chips" id="terminal-mobile-chips" aria-label="Suggested Commands">
+          <button class="term-chip" data-cmd="help">help</button>
+          <button class="term-chip" data-cmd="portfolio">portfolio</button>
+          <button class="term-chip" data-cmd="projects">projects</button>
+          <button class="term-chip" data-cmd="skills">skills</button>
+          <button class="term-chip" data-cmd="education">education</button>
+          <button class="term-chip" data-cmd="services">services</button>
+          <button class="term-chip" data-cmd="email">email</button>
+          <button class="term-chip" data-cmd="phone">phone</button>
+          <button class="term-chip" data-cmd="clear">clear</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Mission Control Full-Screen Overlay (F3 or Ctrl+↑) -->
+  <div class="mission-control-overlay" id="mission-control-overlay" aria-hidden="true" role="dialog"
+    aria-label="Mission Control">
+    <div class="mc-backdrop"></div>
+    <div class="mc-header">
+      <div class="mc-title">Mission Control</div>
+      <div class="mc-subtitle">Click any window to focus &bull; Press <kbd>ESC</kbd> to exit</div>
+    </div>
+    <div class="mc-windows-grid" id="mc-windows-grid">
+      <!-- Injected dynamically with live thumbnails of open windows -->
+    </div>
+  </div>
+
+  <!-- QuickLook / Certificate Inspection Modal -->
+  <div class="quicklook-modal" id="quicklook-modal" aria-hidden="true" role="dialog"
+    aria-label="Quick Look Certificate Preview">
+    <div class="quicklook-backdrop" id="quicklook-backdrop"></div>
+    <div class="quicklook-dialog">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="traffic-dot dot-close" id="quicklook-close-btn" aria-label="Close Preview"></button>
+        </div>
+        <span class="window-title" id="quicklook-title">Certificate Preview</span>
+        <div class="window-actions-spacer"></div>
+      </header>
+      <div class="quicklook-body">
+        <img src="" alt="Certificate Preview" id="quicklook-img" />
+      </div>
+    </div>
+  </div>
+
+  <!-- macOS Bottom Floating Glass Dock -->
+  <nav class="macos-floating-dock" id="macos-dock" aria-label="macOS Floating Dock">
+    <div class="dock-glass-capsule" id="dock-capsule">
+
+      <!-- 1. Home (house) -->
+      <button class="dock-item active" data-window-id="home" data-tooltip="Home" aria-label="Home Window">
+        <div class="dock-icon-box icon-home">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-house"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 2. Resume (doc.text) -->
+      <button class="dock-item" data-window-id="resume" data-tooltip="Resume" aria-label="Resume Window">
+        <div class="dock-icon-box icon-resume">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-doc-text"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 3. Services (briefcase) -->
+      <button class="dock-item" data-window-id="services" data-tooltip="Services" aria-label="Services Window">
+        <div class="dock-icon-box icon-services">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-briefcase"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 4. Projects (folder) -->
+      <button class="dock-item" data-window-id="projects" data-tooltip="Projects" aria-label="Projects Window">
+        <div class="dock-icon-box icon-projects">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-folder"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 5. Certificates (rosette) -->
+      <button class="dock-item" data-window-id="certificates" data-tooltip="Certificates"
+        aria-label="Certificates Window">
+        <div class="dock-icon-box icon-certificates">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-rosette"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 6. Education (graduationcap) -->
+      <button class="dock-item" data-window-id="education" data-tooltip="Education" aria-label="Education Window">
+        <div class="dock-icon-box icon-education">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-graduationcap"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 7. Skills (cpu) -->
+      <button class="dock-item" data-window-id="skills" data-tooltip="Skills" aria-label="Skills Window">
+        <div class="dock-icon-box icon-skills">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-cpu"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 8. Contact (envelope) -->
+      <button class="dock-item" data-window-id="contact" data-tooltip="Contact" aria-label="Contact Window">
+        <div class="dock-icon-box icon-contact">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-envelope"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 9. Website (globe) -->
+      <button class="dock-item" data-window-id="website" data-tooltip="Website: mmsingh.me" aria-label="Website Window">
+        <div class="dock-icon-box icon-website">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-globe"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <!-- 10. Terminal (terminal-prompt) -->
+      <button class="dock-item" data-window-id="terminal" data-tooltip="Terminal" aria-label="Terminal Window">
+        <div class="dock-icon-box icon-terminal">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-terminal"></use>
+          </svg>
+        </div>
+        <span class="dock-active-dot"></span>
+      </button>
+
+      <div class="dock-v-separator"></div>
+
+      <!-- External Link: GitHub -->
+      <a href="https://github.com/manish-panwarr" target="_blank" rel="noopener noreferrer" class="dock-item"
+        data-tooltip="GitHub" aria-label="GitHub Profile">
+        <div class="dock-icon-box icon-github">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-github"></use>
+          </svg>
+        </div>
+      </a>
+
+      <!-- External Link: LinkedIn -->
+      <a href="https://www.linkedin.com/in/manish-mohan-singh-aab371374/" target="_blank" rel="noopener noreferrer"
+        class="dock-item" data-tooltip="LinkedIn" aria-label="LinkedIn Profile">
+        <div class="dock-icon-box icon-linkedin">
+          <svg class="dock-symbol-svg" aria-hidden="true">
+            <use href="#icon-linkedin"></use>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- ES Modules -->
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
